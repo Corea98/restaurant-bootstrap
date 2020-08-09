@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Landing Page</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        .large-separator {
+            border-top: 3px solid #C39D63;
+            width: 356px;
+            margin: 20px 0;
+        }
+
+        .separator {
+            border-top: 3px solid #C39D63;
+            width: 60px;
+            margin-top: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn-1 {
+            font-size: 15px;
+            border: 2px solid white;
+            padding: 4.5px 15px;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        .btn-1:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            opacity: 1; 
+        }
+
+        .btn-2 {
+            font-size: 15px;
+            border: 2px solid #C39D63;
+            padding: 4.5px 15px;
+            display: inline-block;
+            background-color: #C39D63;
+            letter-spacing: 2px;
+        }
+
+        .btn-2:hover {
+            opacity: 1; 
+        }
+
+
+        .oscuro {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100%;
+        }
+
+        body {
+            font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+            opacity: 0.65;
+            transition: 0.5s;
+        }
+
+        header {
+            font-family: 'Poppins', sans-serif !important;
+            height: 80px;
+            font-weight: 600;
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            color: #20292F;
+            z-index: 9000;
+        }
+
+        .all-width {
+            width: 100%;
+            height: 100%;
+            padding: 0 40px;
+        }
+
+        header h1 {
+            font-size: 23px;
+            font-weight: inherit;
+        }
+
+        header .nav a {
+            font-size: 15px;
+            margin-right: 22px;
+        }
+
+        header .nav .selected {
+            color: black !important;
+        }
+
+        header img {
+            width: 16px;
+        }
+
+        header img:hover {
+            cursor: pointer;
+        }
+
+
+        main h1 {
+            font-size: 48px;
+            font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+            color: #1F1F1F;
+            font-weight: 300;
+            margin-bottom: 50px;
+        }
+
+        main p {
+            font-size: 17px;
+            color: #939393;
+            line-height: 1.8rem;
+            font-weight: 500;
+        }
+
+        main span {
+            margin-top: 60px;
+            font-size: 14px;
+            color: #BFBFBF;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+
+
+
+
+        main #quality {
+            background-image: url("assets/img/maarten-van-den-heuvel-EzH46XCDQRY-unsplash.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            color: white;
+            height: 100vh;
+        }
+
+        main #quality .row {
+            height: 100vh;
+
+        }
+
+        main #quality h2 {
+            font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+            font-size: 72px;
+            font-weight: 300;
+            margin-top: 40px;
+        }
+
+        main #quality p {
+            font-size: 19px;
+            color: #BFBFBF;
+            line-height: 1.8rem;
+            margin: 40px 0;
+        }
+
+        main #quality a {
+            margin: 0 7.5px;
+        }
+
+        
+
+
+        main #welcome {
+            padding: 130px 0;
+        }
+
+
+
+
+
+        main #best {
+            background-color: rgba(0,0,0,0.03);
+            padding: 130px 0;
+        }
+
+        main #best .btn-2 {
+            color: white;
+            margin-top: 20px;
+        }
+
+
+        main #products {
+            background-color: #1F1F1F;
+        }
+
+        main #products .info {
+            height: 357px;
+            padding: 48px 24px;
+            background-color: white;
+        }
+
+        main #products .info span {
+            font-size: 22px;
+            color: #C39D63;
+            font-weight: 500;
+            letter-spacing: 0px;
+        }
+
+        main #products .info h1 {
+            font-size: 24px;
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        main #products .info p {
+            font-size: 100%;
+            margin-bottom: 0px;
+        }
+
+
+        main #products .img-container {
+            height: 357px;
+            overflow: hidden;
+        }
+
+        main #products img {
+            width: 100%;
+        }
+
+
+
+
+        main #testimonials {
+            padding: 130px 0;
+        }
+
+        main #testimonials .testimonial {
+            padding: 0 30px;
+        }
+
+        main #testimonials .testimonial img {
+            width: 20px;
+            margin: 0 2px;
+        }
+
+        main #testimonials .testimonial h1 {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+            font-size: 24px;
+            margin: 35px 0;
+        }
+
+        main #testimonials .testimonial span {
+            color: #1F1F1F;
+            font-size: 17px;
+            letter-spacing: 0px;
+        }
+
+
+
+
+
+
+
+        main #news {
+            padding: 130px 0;
+            background-color: rgba(0,0,0,0.03);
+        }
+
+        main #news .new {
+            padding: 20px 30px;
+        }
+
+        main #news .new .img-container {
+            margin-top: 18px;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        main #news .new .img-container img {
+            width: 100%;
+        }
+
+        main #news .new .info-container {
+            padding: 20px;
+            background-color: white;
+        }
+
+        main #news .new .info-container a {
+            font-size: 18px;
+            color: #1F1F1F;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        main #news .new .info-container .category {
+            font-size: 11px;
+            color: #C39D63;
+            display: inline-block;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        main #news .new .info-container p {
+            font-size: 15px;
+            color: #999;
+        }
+
+        main #news .btn-2 {
+            color: white;
+            margin-top: 40px;
+        }
+
+
+
+
+
+        #contact {
+            background-image: url('assets/img/emy-XoByiBymX20-unsplash.jpg');
+            background-repeat: no-repeat;
+            background-size: 120% auto;
+            color: white;
+        }
+
+        #contact .oscuro {
+            padding: 130px 0;
+        }
+
+        #contact .col-5 {
+            background-color: #1F1F1F;
+            margin: 0 30px;
+            padding: 100px 54px;
+        }
+
+        #contact .hours p {
+            font-family: "Playfair Display";
+            font-size: 30px;
+            font-weight: 300;
+            color: white;
+            margin-bottom: 55px;
+        }
+
+        #contact .hours strong {
+            font-size: 16px;
+        }
+
+        #contact .hours span {
+            font-size: 15px;
+            color: white;
+            font-weight: 500;
+        }
+
+        #contact .hours .btn-2 {
+            margin-top: 30px;
+        }
+
+        #contact .contact h1 {
+            font-family: Montserrat, Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        #contact .contact p {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        #contact .contact h2 {
+            font-size: 24px;
+            margin-top: 85px;
+        }
+
+        #contact .contact input[type='text'] {
+            background-color: #111;
+            padding: 14px 16px;
+            border: none;
+            width: 100%;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        #contact .contact .btn-2 {
+            width: 100%;
+        }
+
+
+
+
+
+
+        footer {
+            height: 60px;
+            background-color: #111;
+        }
+
+        footer .row {
+            height: 60px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row no-gutters justify-content-between align-items-center all-width">
+            <div class="col-auto"><h1>Restaurant Landing Page</h1></div>
+            <div class="col-auto nav">
+                <nav>
+                    <a href="#" class="selected">Landing</a>
+                    <a href="#">Home</a>
+                    <a href="#">Gallery</a>
+                    <a href="#">Shop</a>
+                    <a href="#">Blog</a>
+                    <a href="#">About</a>
+                    <a href="#">Team</a>
+                    <a href="#">Contact</a>
+                </nav>
+
+                <img src="assets/icons/shopping-cart.svg" alt="">
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div id="quality">
+            <div class="oscuro">
+                <div class="container">
+                    <div class="row no-gutters text-center justify-content-center align-items-center">
+                        <div class="col-9">
+                            <h2>Only Quality Food</h2>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectoeaque ipsa quae ab illo inventore.</p>
+
+                            <a href="#" class="btn-1">VIEW MENU</a>
+                            <a href="#" class="btn-2">RESERVATION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="welcome">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-6">
+                        <span>OUR STORY</span>
+
+                        <div class="separator"></div>
+
+                        <h1>Welcome To Royal</h1>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                        <p>Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                    </div>
+                    <div class="col-auto ml-auto mr-auto">
+                        <img src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/food_produce_235-e1506468905186-1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="best">
+            <div class="container">
+                <div class="row no-gutters text-center justify-content-center">
+                    <div class="col-8">
+                        <span>ONLY THE BEST</span>
+                        <div class="row no-gutters justify-content-center">
+                            <div class="col-auto">
+                                <div class="separator"></div>
+                            </div>
+                        </div>
+                        <h1>Fresh Ingredient, Tasty Meals</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+                        <a href="#" class="btn-2">VIEW ITEMS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="products">
+            <div class="container">
+                <div class="row no-gutters text-center">
+                    <div class="col-4">
+                        <div class="info">
+                            <span>$26.95</span>
+                            <h1>Grilled Fillet</h1>
+                            <p>Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+                        </div>
+                        <div class="img-container">
+                            <img src="assets/img/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="img-container">
+                            <img src="assets/img/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg" alt="">
+                        </div>
+                        <div class="info">
+                            <span>$40.5</span>
+                            <h1>King Crab</h1>
+                            <p>Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="info">
+                            <span>$53.3</span>
+                            <h1>Chicken Breast</h1>
+                            <p>Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+                        </div>
+                        <div class="img-container">
+                            <img src="assets/img/edgar-castrejon-1SPu0KT-Ejg-unsplash.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="info">
+                            <span>$40.5</span>
+                            <h1>Sea Trout</h1>
+                            <p>Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+                        </div>
+                        <div class="img-container">
+                            <img src="assets/img/cayla1-w6ftFbPCs9I-unsplash.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="img-container">
+                            <img src="assets/img/bruna-branco-7r1HxvVC7AY-unsplash.jpg" alt="">
+                        </div>
+                        <div class="info">
+                            <span>$22.3</span>
+                            <h1>Roasted Bakra</h1>
+                            <p>Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="info">
+                            <span>$22.3</span>
+                            <h1>Roasted Bakra</h1>
+                            <p>Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+                        </div>
+                        <div class="img-container">
+                            <img src="assets/img/calum-lewis-8Nc_oQsc2qQ-unsplash.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="testimonials">
+            <div class="container">
+                <div class="row no-gutters justify-content-center text-start">
+                    <div class="col-12">                        
+                        <div class="row no-gutters justify-content-center text-center">
+                            <div class="col-12">
+                                <span>TESTIMONIALS</span>
+                            </div>
+                            <div class="col-auto">
+                                <div class="separator"></div>
+                            </div>
+                            <div class="col-12">
+                                <h1>What People are saying</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 testimonial">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+
+                        <h1>"A Great Find"</h1>
+                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu ante eu lectus ornare porta.“</p>
+                        <span>Divi</span>
+                    </div>
+                    <div class="col-3 testimonial">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+
+                        <h1>“Fabulous food & flawless service”</h1>
+                        <p>“Nunc molestie eros nec eros auctor, a dapibus diam iaculis. Aliquam erat volutpat.“</p>
+                        <span>Bloom</span>
+                    </div>
+                    <div class="col-3 testimonial">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+
+                        <h1>"Another successful experience"</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu ante eu lectus ornare porta.“</p>
+                        <span>Extra</span>
+                    </div>
+                    <div class="col-3 testimonial">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+                        <img src="assets/icons/star.svg" alt="">
+
+                        <h1>"Speechless"</h1>
+                        <p>"Nunc molestie eros nec eros auctor, a dapibus diam iaculis. Aliquam erat volutpat.“</p>
+                        <span>Monarch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="news">
+            <div class="container">
+                <div class="row no-gutters justify-content-center text-start">
+                    <div class="col-8">
+                        
+                        <div class="row no-gutters justify-content-center text-center">
+                            <div class="col-12">
+                                <span>DON'T MISS</span>
+                            </div>
+                            <div class="col-auto">
+                                <div class="separator"></div>
+                            </div>
+                            <div class="col-12">
+                                <h1>Our News And Events</h1>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-12"></div>
+
+                    <div class="col-4 new">
+                        <div class="img-container">
+                            <img src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/bakery-16-400x250.jpg" alt="">
+                        </div>
+
+                        <div class="info-container">
+                            <a href="#">Nunc Volutpat Venenatis</a> <br>
+                            <a href="#" class="category">CATEGORY</a> <br>
+                            <p>Nulla a odio sed magna congue condimentum. Pellentesque convallis enim nec libero vulputate, et rhoncus urna placerat. Phasellus mattis, diam vel vehicula facilisis, erat leo dapibus augue, at mollis tellus ex non nisi. Ut faucibus fringilla semper. Aenean nunc ex,...</p>
+                        </div>
+                    </div>
+                    <div class="col-4 new">
+                        <div class="img-container">
+                            <img src="https://www.elegantthemes.com/layouts/wp-content/uploads/2018/01/generator-68-400x250.jpg" alt="">
+                        </div>
+
+                        <div class="info-container">
+                            <a href="#">Vestibulum Nisl Felis</a> <br>
+                            <a href="#" class="category">CATEGORY</a> <br>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet. Morbi mollis mollis pellentesque. Aenean vitae erat velit.</p>
+                        </div>
+                    </div>
+                    <div class="col-4 new">
+                        <div class="img-container">
+                            <img src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/florist-04-400x250.jpg" alt="">
+                        </div>
+
+                        <div class="info-container">
+                            <a href="#">Proin Eu Augue Efficitur</a> <br>
+                            <a href="#" class="category">CATEGORY</a> <br>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet. Morbi mollis mollis pellentesque. Aenean vitae erat velit.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <a href="#" class="btn-2">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact">
+            <div class="oscuro">
+                <div class="container">
+                    <div class="row no-gutters text-center justify-content-center">
+                        <div class="col-5 hours">
+                            <p>Hours of Operation</p>
+                            <strong>MON - FRI <br></strong>
+                            <span>
+                                10:00am – 1:00pm <br>
+                                4:00pm – 10:30pm
+                            </span>
+
+                            <div class="row no-gutters justify-content-center">
+                                <div class="col-auto">
+                                    <div class="large-separator"></div>
+                                </div>
+                            </div>
+
+                            <strong>SAT</strong> <br>
+                            <span>3:00pm – 10:30pm</span>
+
+                            <div class="row no-gutters justify-content-center">
+                                <div class="col-auto">
+                                    <div class="large-separator"></div>
+                                </div>
+                            </div>
+
+                            <strong>SUN</strong> <br>
+                            <span>We are closed</span>
+
+                            <div class="row no-gutters justify-content-center">
+                                <div class="col-auto">
+                                    <a href="#" class="btn-2">MAKE A RESERVATION</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5 contact">
+                            <h1>Drop Us a Line</h1>
+                            <p>Don’t be shy. Let us know if you have any questions!</p>
+
+                            <div class="row no-gutters justify-content-center">
+                                <div class="col-auto">
+                                    <a href="#" class="btn-2">CONTACT US</a>
+                                </div>
+                            </div>
+
+                            <h2>Our Newsletter</h2>
+                            <p>Dialogue is an essential part of any script</p>
+
+                            <form action="POST">
+                                <input type="text" placeholder="First Name">
+                                <input type="text" placeholder="Last Name">
+                                <input type="text" placeholder="Email">
+
+                                <a href="#" class="btn-2">CONTACT US</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row no-gutters justify-content-between align-items-center">
+                <div class="col-auto">
+                    Designed by Elegant Themes | Powered by WordPress
+                </div>
+                <div class="col-auto">
+                    Otros iconitos xd
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
